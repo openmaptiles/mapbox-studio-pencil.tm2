@@ -32,30 +32,41 @@ Map {
   }
 }
 
-#park {
+#landcover [class='wood'], {
   opacity: 0.5;
   comp-op: multiply;
-  polygon-pattern-opacity: 0.5;
   polygon-pattern-file:url(img/shade_medium.png);
-    [zoom<=15] {
-      line-opacity: 0.4;
-      line-width: 1.2;
-      [zoom=15] { line-width: 2; }
-    }
-    [zoom>=16] { line-pattern-file:url(img/line_shade_22.png); }
+  [class='wood'] {
+    polygon-pattern-opacity: 0.4;
+  }  
+  [class='grass'] {
+    polygon-pattern-opacity: 0.2;
+  }
+  [class='farmland'],[class='ice'],[class='wetland'] {
+    polygon-pattern-opacity: 0;
+  }
+}
+
+#park {
+  [class='nature_reserve'],[class='national_park'] {
+    polygon-pattern-opacity: 0.7;
+    opacity: 0.7;
+    comp-op: multiply;
+    polygon-pattern-file:url(img/shade_medium_2.png);
+  }  
 }
 
 #aeroway['mapnik::geometry_type'=2][zoom>=12] {
   comp-op: multiply;
   opacity:0.5;
-  [type='taxiway'] {
+  [class='taxiway'] {
     [zoom=13] { line-pattern-file:url(img/line_solid_6.png); }
     [zoom=14] { line-pattern-file:url(img/line_solid_7.png); }
     [zoom=15] { line-pattern-file:url(img/line_shade_22_1.png); }
     [zoom=16] { line-pattern-file:url(img/line_shade_22_2.png); }
     [zoom>16] { line-pattern-file:url(img/line_shade_22_4.png); }
   }
-  [type='runway'] {
+  [class='runway'] {
     line-pattern-file:url(img/line_shade_22.png);
     [zoom>=15] { line-pattern-file:url(img/line_shade_22_2.png); }
     [zoom>=16] { line-pattern-file:url(img/line_shade_22_4.png); }
