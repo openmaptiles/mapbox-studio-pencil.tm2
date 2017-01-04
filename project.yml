@@ -2,7 +2,7 @@ _prefs:
   saveCenter: false
 _properties: {}
 attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox</a> <a href='https://openstreetmap.org/about/' target='_blank'>&copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
-bounds:
+bounds: 
   - -180
   - -85.0511
   - 180
@@ -18,9 +18,8 @@ layers: null
 maxzoom: 21
 minzoom: 0
 name: Pencil
-source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v6"
+source: "http://openmaptiles.org/cdn.json"
 styles: 
   - style.mss
   - road.mss
-  - terrain.mss
 template: ''

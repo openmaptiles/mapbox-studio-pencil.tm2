@@ -2,9 +2,7 @@
 // so we vary opacity, weight, and dasharrays to bring texture
 // to regular line strokes.
 
-#road['mapnik::geometry_type'=2]::line,
-#bridge['mapnik::geometry_type'=2]::line,
-#tunnel['mapnik::geometry_type'=2]::line {
+#transportation['mapnik::geometry_type'=2]::line {
   [class='motorway'] {
     [zoom>=7][zoom<=11] {
       a/line-width:0.6;
@@ -28,8 +26,7 @@
     }
     [zoom=12] { line-pattern-file:url(img/line_solid_7.png); }
   }
-  [class='motorway_link'],
-  [class='main'] {
+  [class='trunk'],[class='primary'],[class='secondary'],[class='tertiary'] {
     [zoom>=7][zoom<=11] {
       a/line-color: #222;
       a/line-opacity: 0.25;
@@ -42,8 +39,7 @@
     [zoom=12] { line-pattern-file:url(img/line_solid_6.png); }
     [zoom=13] { line-pattern-file:url(img/line_solid_7.png); }
   }
-  [class='street'],
-  [class='street_limited'] {
+  [class='minor'],[class='track'] {
     [zoom=12] {
       a/line-width:1.5;
       a/line-opacity:0.05;
@@ -62,8 +58,7 @@
     [zoom=16] { line-pattern-file:url(img/line_dotted_4.png); }
     [zoom>=17] { line-pattern-file:url(img/line_dotted_6.png); }
   }
-  [class='major_rail'][zoom>=14],
-    [class='minor_rail'][zoom>=16] {
+  [class='railway'][zoom>=14],
     ['mapnik::geometry_type'=2] {
       a/line-width:1;
       a/line-opacity:0.05;
@@ -75,12 +70,9 @@
       c/line-opacity:0.05;
       c/line-dasharray:20,3;
     }
-  }
 }
 
-#road::case,
-#bridge::case,
-#tunnel::case {
+#transportation::case {
   ['mapnik::geometry_type'=2][zoom>=13][zoom<=20] {
     [class='motorway'] {
       [zoom=13] { line-pattern-file:url(img/line_double_14.png); }
@@ -102,7 +94,7 @@
   }
 }
 
-#road::dot['mapnik::geometry_type'=1][class='turning_circle'][zoom>=15] {
+#transportation::dot['mapnik::geometry_type'=1][class='turning_circle'][zoom>=15] {
   marker-width: 6;
   [zoom>=16] { marker-width: 9; }
   [zoom>=17] { marker-width: 12; }
@@ -111,8 +103,7 @@
   marker-line-width: 1.5;
 }
 
-#road::fill,
-#bridge::fill {
+#transportation::fill {
   ['mapnik::geometry_type'=2][zoom>=13][zoom<=20] {
     [class='motorway'] {
       [zoom=13] { line-pattern-file:url(img/line_double_14_mask.png); }

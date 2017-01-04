@@ -32,20 +32,17 @@ Map {
   }
 }
 
-#landuse {
+#park {
   opacity: 0.5;
   comp-op: multiply;
-  [class='park'],
-  [class='cemetery'] {
-    polygon-pattern-opacity: 0.5;
-    polygon-pattern-file:url(img/shade_medium.png);
+  polygon-pattern-opacity: 0.5;
+  polygon-pattern-file:url(img/shade_medium.png);
     [zoom<=15] {
       line-opacity: 0.4;
       line-width: 1.2;
       [zoom=15] { line-width: 2; }
     }
     [zoom>=16] { line-pattern-file:url(img/line_shade_22.png); }
-  }
 }
 
 #aeroway['mapnik::geometry_type'=2][zoom>=12] {
@@ -87,7 +84,7 @@ Map {
   }
 }
 
-#admin[admin_level=2] {
+#boundary[admin_level=2] {
   ::glow[maritime=0] {
     opacity: 0.8;
     line-color: #e3e3e3;
