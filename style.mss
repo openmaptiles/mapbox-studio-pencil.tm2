@@ -85,40 +85,17 @@ Map {
 }
 
 #boundary[admin_level=2] {
-  ::glow[maritime=0] {
-    opacity: 0.8;
-    line-color: #e3e3e3;
-    line-width: 6;
-    line-join: round;
-    [zoom>=5] { line-width: 7; }
-    [zoom>=7] { line-width: 8; }
-  }
   line-width:1.2;
   line-color: #666;
   line-opacity:0.8;
   line-dasharray:2,1,3,1,1,1,4,1,5,1;
   line-join: round;
   line-cap: round;
-  [maritime=1] {
-    line-dasharray:4,4,3,3;
-    line-opacity: 0.5;
-  }
-  [disputed=1] {
-    line-dasharray: 9,7;
-  }
   [zoom>=5] { line-width: 1.8; }
   [zoom>=7] { line-width: 2.2; }
 }
 
-#admin[admin_level>=3][maritime=0] {
-  ::glow[maritime=0] {
-    opacity: 0.8;
-    line-color: #e3e3e3;
-    line-width: 4;
-    line-join: round;
-    [zoom>=5] { line-width: 5; }
-    [zoom>=7] { line-width: 6; }
-  }
+#boundary[admin_level>=3][maritime=0] {
   line-width: 1;
   line-color: #666;
   line-opacity:0.5;
