@@ -1,4 +1,4 @@
-Copyright © 2014, Mapbox. All rights reserved.
+Modifications copyright (c) 2016, KlokanTech.com & OpenMapTiles contributors.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
