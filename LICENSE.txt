@@ -1,5 +1,5 @@
 Copyright (c) 2014, Mapbox
-Modifications copyright (c) 2016, KlokanTech.com & OpenMapTiles contributors.
+Modifications copyright (c) 2024, MapTiler.com & OpenMapTiles contributors.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
